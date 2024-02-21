@@ -2,7 +2,6 @@ package InheritanceConstruct;
 
 public class Janitor extends Employee {
 	private boolean supplies;
-	
 	public Janitor(String vac,double bono,boolean s) {
 		super(vac, bono);	
 		supplies = s;

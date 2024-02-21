@@ -1,4 +1,5 @@
 package InheritanceConstruct;
+import java.util.*;
 
 public class NovinceJanitor extends Janitor {
 
