@@ -22,7 +22,6 @@ public class Janitor extends Employee {
 	public int getVacationDays() {
 		return (super.getVacationDays()/2);
 	}
-	
 	@Override
 	public String toString() {
 		  return "I work " + getHours() + 
