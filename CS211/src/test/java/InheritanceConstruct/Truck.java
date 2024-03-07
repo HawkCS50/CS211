@@ -8,6 +8,7 @@ public class Truck extends Car {
 	@Override
 	public void m2()
 	{ super.m1(); }
+	
 	public String toString() {
 		return super.toString() +
 				super.toString();

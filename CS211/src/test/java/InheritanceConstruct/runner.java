@@ -5,11 +5,28 @@ public class runner {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Employee A = new Employee("Yellow", 340.52);
-		stats(A);
+		System.out.println("HOURS: "+A.getHours());
+		System.out.println("SALARY: "+A.getSalary());
+		System.out.println("VACATIONDAYS: "+A.getVacationDays());
+		System.out.println("VACATIONFORM: "+A.getVacationForm());
+		System.out.println(A);
 		Janitor B = new Janitor("Blue",100,true);
-		stats(B);
+		System.out.println("HOURS: "+B.getHours());
+		System.out.println("SALARY: "+B.getSalary());
+		System.out.println("VACATIONDAYS: "+B.getVacationDays());
+		System.out.println("VACATIONFORM: "+B.getVacationForm());
+		System.out.println("ToString: "+B);
+		System.out.println("Cleaning: ");
+		B.clean();
 		NovinceJanitor C = new NovinceJanitor("Blue",25);
-		stats(C);
+		System.out.println("HOURS: "+C.getHours());
+		System.out.println("SALARY: "+C.getSalary());
+		System.out.println("VACATIONDAYS: "+C.getVacationDays());
+		System.out.println("VACATIONFORM: "+C.getVacationForm());
+		System.out.println("ToString: "+C);
+		System.out.println("Cleaning: ");
+		C.clean();
+
 		/**********************
 		 * Car inheritance (part 2)
 		 */
@@ -34,13 +51,6 @@ public class runner {
 		mt.m2();
 		System.out.println( "\nCall to print MonsterTruck's toString(): " );
 		System.out.println( mt ); // calls toString()
-	}
-	private static void stats(Employee x) {
-		System.out.println("HOURS: "+x.getHours());
-		System.out.println("SALARY: "+x.getSalary());
-		System.out.println("VACACTIONDAYS: "+x.getVacationDays());
-		System.out.println("VACATIONFORM: "+x.getVacationForm());
-		System.out.println(x);
 	}
 }
 //System.out.println(

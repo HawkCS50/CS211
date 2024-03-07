@@ -1,0 +1,7 @@
+package labDigitMath;
+
+public class methods {
+	public int thouPlace(int x) {
+		return (x/10000)%10000;
+	}
+}

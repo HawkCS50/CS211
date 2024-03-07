@@ -12,7 +12,7 @@ public class NovinceJanitor extends Janitor {
 	}
 	@Override
 	public void clean() {
-		System.out.println("Workin' for the man."
-				+ "\nI need more training.");
+		super.clean();
+		System.out.println("I need more training.");
 	}
 }

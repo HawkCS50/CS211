@@ -24,13 +24,7 @@ public class Janitor extends Employee {
 	}
 	@Override
 	public String toString() {
-		  return "I work " + getHours() + 
-				  " hours weekly, make $" + 
-				  getSalary() + ", have " + 
-				  getVacationDays() + 
-				  " vacation days, and fill out a " + 
-				  getVacationForm() + " vacation form."
-				  +supplies();
+		  return super.toString()+" "+supplies();
 		}
 	private String supplies() {
 		if (supplies) return "I have all the supplies I need!";
