@@ -2,20 +2,29 @@ package Worksheets;
 import java.util.Arrays;
 public class SortWS {
 	public static void main(String[] args) {
-		int[] arr = {15, 7, 2, 19, 3, 1, -10, 40, 23, -30, 45, 8, 13};
+		int[] primary = {15, 7, 2, 19, 3, 1, -10, 40, 23, -30, 45, 8, 13},
+				arr=primary;
+		
 		System.out.println("Unsorted Arr: "+Arrays.toString(arr));
-		increasingSelectionSort(arr);
 		System.out.println("Selection Sort Increasing: " +Arrays.toString(arr));
+		increasingSelectionSort(arr);
+		arr=primary;
+		System.out.println("Selection Sort Decreasing: " +Arrays.toString(arr));
 		decreasingSelectionSort(arr);
-		System.out.println("Selection Sort Decreasing: " +Arrays.toString(arr));
-		insertionSort(arr,1);
-		System.out.println("Selection Sort Decreasing: " +Arrays.toString(arr));
+		arr=primary;
+		System.out.println("Insertion Sort Increasing: " +Arrays.toString(arr));
+		incInsertSort(arr,1);
+		arr=primary;
+		System.out.println("Insertion Sort Decreasing: " +Arrays.toString(arr));
+		decInsertSort(arr,1);
 	}
+	
 	static void increasingSelectionSort(int[] arr) {
 	    for (int i = 0; i < arr.length - 1; i++)
 	        for (int j = i + 1; j < arr.length; j++)
 	            if (arr[j] < arr[i]) {
 	            	arr[i] ^= arr[j]; arr[j] ^= arr[i]; arr[i] ^= arr[j];
+	            	System.out.println(Arrays.toString(arr));
 	            }
 	}
 	static void decreasingSelectionSort(int[] arr) {
@@ -23,21 +32,34 @@ public class SortWS {
 	        for (int j = i + 1; j < arr.length; j++)
 	            if (arr[j] > arr[i]) {
 	            	arr[i] ^= arr[j]; arr[j] ^= arr[i]; arr[i] ^= arr[j];
+	            	System.out.println(Arrays.toString(arr));
 	            }
 	}
-	public static void insertionSort(int[] arr, int i) {
+	public static void incInsertSort(int[] arr, int i) {
 	    if (i < arr.length) {
-	        int j = i;
-	        while (j > 0 && arr[j - 1] > arr[j]) {
-            	arr[i] ^= arr[j]; arr[j] ^= arr[i]; arr[i] ^= arr[j];	           
-            	j--;
-	        }
-	        insertionSort(arr, i + 1);
+	        for(int j =i;j > 0 && arr[j - 1] > arr[j]; j--) {
+	            int temp = arr[j];
+	            arr[j] = arr[j - 1];
+	            arr[j - 1] = temp;	      
+            	System.out.println(Arrays.toString(arr));
+	            }
+	        incInsertSort(arr, i + 1);
 	    }
 	}
+	public static void decInsertSort(int[] arr, int i) {
+	    if (i < arr.length) {
+	        for(int j =i;j > 0 && arr[j - 1] < arr[j]; j--) {
+	            int temp = arr[j];
+	            arr[j] = arr[j - 1];
+	            arr[j - 1] = temp;	        
+            	System.out.println(Arrays.toString(arr));
+	        decInsertSort(arr, i + 1);
+	    }
+	}
+	
 
 
-
+	}
 
 
 }
