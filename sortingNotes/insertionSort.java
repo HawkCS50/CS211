@@ -15,14 +15,17 @@ public class insertionSort {
 		}
 	}
 	public static void sort(int[] something) {
-		for (int i= 0; i<something.length; i++) 
+		for (int i= 0; i<something.length; i++) {
 			for (int j: something) {
 				if (something[i]<j) {
 					something[i]^=j;
 					j^=something[i];
 					something[i]^=j;
 				}
+				System.out.print(j);
 			}
+		System.out.print(" ");
+		}
 	}
 
 }
