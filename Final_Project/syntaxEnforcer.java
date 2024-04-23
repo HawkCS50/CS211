@@ -24,12 +24,12 @@ public class syntaxEnforcer {
 		}
 		return false;
 	}
-	public static boolean isValid(String formula) {
+	public static boolean parse(String formula) {
 		for(int i=0;i<formula.length();i++) {
 			if (Character.isDigit(formula.charAt(i)))
 				if(isElementSymbol(formula.substring(0,i))) {
 					if(i!=formula.length()-1) {
-						if(isValid(formula.substring(i+1)))
+						if(parse(formula.substring(i+1)))
 							return true;
 						else 
 							return false;
@@ -44,5 +44,7 @@ public class syntaxEnforcer {
 		}
 		return false;
 	}
+	public static boolean parse(String formula)
+	
 }
 
