@@ -1,4 +1,4 @@
-package Final_Project;
+package chemSyntaxParserBroken;
 
 import java.util.Arrays;
 
