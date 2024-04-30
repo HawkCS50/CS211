@@ -1,7 +1,14 @@
 package Final_Project;
+import java.util.*;
 
-abstract class Compound {
-	private String formula;
-	private int mass;
-	public compound
+public class Compound {
+	public static void GrabFormula() {
+		Map<String, Integer[]> compounds = new HashMap<>();
+		for(String element:parse(reactants))
+			compounds.put(element, parseElem(Element));
+
+	}
+	public void static promptEquation()
+	
+
 }
