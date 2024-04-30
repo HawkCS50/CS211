@@ -1,4 +1,4 @@
-package Final_Project.Updated;
+package Final_Project;
 import java.util.*;
 public class syntax {
 	private static final String[] ELEMENT_SYMBOLS = {
@@ -36,18 +36,14 @@ public class syntax {
 	then recurses to identify another element and isolate it into a List<String>
 	entry so that it can ultimately return a concatenated list (via the .addAll method)
 	to the method that has called it.*/
-	public static List<String> parse(String formula) {
+	private static List<String> parse(String formula) {
 	    for (int i = 0; i < formula.length(); i++) {
 	        if (Character.isDigit(formula.charAt(i))) {
 	            if (isElementSymbol(formula.substring(0, i))) {
 	                List<String> elements = new ArrayList<>(List.of(formula.substring(0, i)));
 	                elements.addAll(parse(formula.substring(i + 1)));
 	                return elements;
-<<<<<<< HEAD
-	            }	
-=======
 	            }
->>>>>>> 471bf1605683397795dbd0da94500f3b1fd03127
 	        }
 	    }
 	    return Collections.emptyList();
@@ -73,6 +69,7 @@ public class syntax {
 		return false;
 	}
 	public static Double[] parseElem(String element) {
+		int r=Run.reactants.size(), p=Run.products.size();
 	    Double[] coeff = new Double[(r+p)];
 	    
 	    for (int i = 0; i < r;i++) { // Iterate over reactants size instead
@@ -97,42 +94,5 @@ public class syntax {
 		}
 		return count;
 	}
-    public static atom[] convertToAtomsArray(List<String> elementNames) {
-        List<atom> result = new ArrayList<>();
-
-        // Iterate through the element names
-        for (String name : elementNames) {
-            // Find the corresponding atom object by name
-            atom foundAtom = findAtomByName(name);
-            if (foundAtom != null) {
-                result.add(foundAtom);
-            }
-        }
-
-        // Convert the ArrayList to an array
-        return result.toArray(new atom[result.size()]);
-    }
-
-    // Helper method to find atom by name
-<<<<<<< HEAD
-    public static atom findAtomByName(String name) {
-        for (atom a : Run.table) {
-            if (a.symbol != null && a.symbol.equals(name)) { // Add null check for a.symbol
-                return a;
-            }
-        }
-        return null;
-    }
-
-=======
-    private static atom findAtomByName(String name) {
-        for (atom a:Run.table) {
-            if (a.symbol.equals(name)) {
-                return a;
-            }
-        }
-        return null; // Return null if atom not found
-    }
->>>>>>> 471bf1605683397795dbd0da94500f3b1fd03127
 }
 
