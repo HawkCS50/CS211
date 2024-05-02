@@ -47,7 +47,13 @@ public class Dialogue {
             if (syntax.check(choice)) {
                 Run.creation(choice);
                 Run.stats(Run.cookbook.get(choice));
+<<<<<<< HEAD
+                r=false;
             }
+           
+=======
+            }
+>>>>>>> 471bf1605683397795dbd0da94500f3b1fd03127
         }
     }
 
@@ -56,9 +62,18 @@ public class Dialogue {
     	listChemicals();
         while (r) {
             for (String s : OPTIONS[3]) System.out.print(s);
+<<<<<<< HEAD
+            String choice = scanner.next();
+            scanner.nextLine(); // consume newline
+            if (Run.hasEntryInCookbook(choice)) {
+            	Run.stats(Run.cookbook.get(choice)); 
+            	r= false;
+            }
+=======
             int choice = scanner.nextInt();
             scanner.nextLine(); // consume newline
             if (choice != 0) r = false;
+>>>>>>> 471bf1605683397795dbd0da94500f3b1fd03127
         }
     }
 
@@ -89,6 +104,10 @@ public class Dialogue {
 
     private static void listChemicals() {
         // Implement listChemicals method if needed
+<<<<<<< HEAD
+    	Run.printAtomSymbols();
+=======
+>>>>>>> 471bf1605683397795dbd0da94500f3b1fd03127
     }
 
     private static void getMW() {
